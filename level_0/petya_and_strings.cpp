@@ -2,27 +2,28 @@
 #include <vector>
 #include <algorithm>
 #include <cstring>
+#include <string>
 
 using namespace std;
 
 int main()
 {
-	int res;
-	char s1[100];
-	char	s2[100];
-	cin.getline (s1, 100);
-	cin.getline (s2, 100);
-	res = 32;
-	int i = 0;
-	while (res == 32 && (s1[i] || s2[i]))
+	string s1; cin >> s1;
+	string s2; cin >> s2;
+	for (int i = 0; i < s1.length(); i++)
+		s1[i] = tolower(s1[i]);
+	for (int i = 0; i < s2.length(); i++)
+		s2[i] = tolower(s2[i]);
+	int r = 0;
+	for (int i = 0; i < s1.length(); i++)
 	{
-		res = strcmp(s1+i, s2+i);
-		i++;
+		r = s1[i] - s2[i];
+		if (r != 0)
+			goto B;
 	}
-	if (res == 0 || abs(res) == 32)
-		cout << 0;
-	else if (res > 0)
-		cout << 1;
-	else
-		cout << -1;
+B:	if (r < 0)
+		r = -1;
+	if (r > 0)
+		r = 1;
+ 	cout << r << endl;	
 }
