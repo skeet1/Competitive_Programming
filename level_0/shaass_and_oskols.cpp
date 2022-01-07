@@ -5,7 +5,7 @@ using namespace std;
 int main()
 {
 	int n; cin >> n;
-	vector<int>tab(n, 1);
+	vector<int>tab(n+2, 1);
 	for (int i = 1; i <= n; i++)
 		cin >> tab[i];
 	int ns; cin >> ns;
