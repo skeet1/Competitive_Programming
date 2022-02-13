@@ -28,24 +28,9 @@ int main()
 					ans += t[i] / 2;
 			}
 		}
-		if (n == 3)
-		{
-			if (t[1] % 2 == 1)
-				cout << -1 << endl;
-			else
-				cout << t[1] / 2 << endl;
-		}
-		else
-		{
-			if (n - 2 == one)
-				cout << -1 << endl;
-			else
-				cout << ans << endl;
-		}
-/*		if ((odd == 1 && n == 3) || (odd == one && odd > 0))
+		if ((odd == 1 && n == 3) || (n - 2 == one && odd > 0))
 			cout << -1 << endl;
 		else
 			cout << ans << endl;
-			*/
 	}
 }
