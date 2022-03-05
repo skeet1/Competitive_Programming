@@ -12,26 +12,19 @@ int main()
 		int n;
 		cin >> n;
 		vector<ll>t(n);
+		vector<int>odd;
+		vector<int>even;
 		for (ll i = 0; i < n; i++)
-			cin >> t[i];
-		ll j = 1;
-		while (j)
 		{
-			j = 0;
-			for (ll i = 0; i < n - 1; i++)
-			{
-				if (t[i] > t[i + 1] && (t[i] + t[i + 1]) % 2 == 1)
-				{
-					ll temp = t[i];
-					t[i] = t[i + 1];
-					t[i + 1] = temp;
-					j++;
-				}
-			}
+			cin >> t[i];
+			if (t[i] % 2)
+				odd.push_back(t[i]);
+			else
+				even.push_back(t[i]);
 		}
-		if (is_sorted(t.begin(), t.end()))
-			cout << "Yes" << endl;
+		if (is_sorted(even.begin(), even.end()) && is_sorted(odd.begin(), odd.end()))
+			cout << "YES" << '\n';
 		else
-			cout << "No" << endl;
+			cout << "NO" << '\n';
 	}
 }
