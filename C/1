@@ -1,0 +1,25 @@
+#include <iostream>
+#include <algorithm>
+#include <vector>
+
+using namespace std;
+int main()
+{
+	int t; cin>> t;
+	while (t--)
+	{
+		int n, k;
+		cin >> n >> k;
+		vector<int>t(k + 1);
+		for (int i = 0; i <= k; i++)
+			t[i] = (k ^ i);
+		sort(t.begin(), end());
+		int i;
+		for (i = 1; i <= k; i++)
+			if (t[i] < t[i - 1] - 1)
+			{
+				cout << t[i] + 1 << endl;
+				break;
+			}
+	}
+}

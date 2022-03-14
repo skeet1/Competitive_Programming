@@ -28,7 +28,12 @@ typedef vector<int> vi;
 
 void	solve()
 {
-
+	int n, m;cin >> n >> m;
+	vi t(n);
+	for (int i= 0;i < n; i++)
+		cin >> t[i];
+	sort(t.B, t.E);
+	for (int i = 
 }
 
 signed main()

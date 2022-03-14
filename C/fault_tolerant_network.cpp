@@ -28,29 +28,34 @@ typedef vector<int> vi;
 
 void	solve()
 {
-	string s1, s2; cin >> s1 >> s2;
-	int j = 0;
-	for (int i = 0; i < s2.length(); i++)
+	int n; cin >> n;
+	vi a(n);
+	vi b(n);
+	vi aa(n);
+	vi bb(n);
+	int cost1 = 0, cost2 = 0, cost3 = 0;
+	for (int i = 0; i < n; i++)
 	{
-		for (; j < s1.length(); )
-		{
-			if (s2[i] == s1[j])
-			{
-				i++;
-				j++;
-			}
-			else
-				break;
-		}
+		cin >> a[i];
+		aa[i] = a[i];
 	}
-	cout << j+1 << endl;
+	for (int i = 0; i < n; i++)
+	{
+		cin >> b[i];
+		bb[i] = b[i];
+	}
+	sort(aa.B, aa.E);
+	sort(bb.B, bb.E);
+	cost1 = a[0] * (b[n - 1] + b[0]) + a[n - 1] * (b[n - 1] * b[0]);
+	cost2 = aa[0] * (b[0] + b[n - 1]) + bb[0] * (a[1] + a[n - 2]);
+	cost3 = abs(a[0] - b[0]) + abs(a[n - 1] + b[n - 1]);
+	cout << min(cost1, cost2) << nl;
 }
 
 signed main()
 {
     int t;
-//    cin >> t;
-	t = 1;
+    cin >> t;
     while(t--)
     {
         solve();

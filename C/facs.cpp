@@ -14,7 +14,7 @@ using namespace std;
 typedef long long ll;
 typedef vector<int> vi;
 #define F first
-#define nl '\n'
+#define ln '\n'
 #define S second
 #define PB push_back
 #define MP make_pair
@@ -26,33 +26,20 @@ typedef vector<int> vi;
 #define REP(i,a,b) for (int i = a; i < b; i++)
 #define L length()
 
-void	solve()
-{
-	string s1, s2; cin >> s1 >> s2;
-	int j = 0;
-	for (int i = 0; i < s2.length(); i++)
-	{
-		for (; j < s1.length(); )
-		{
-			if (s2[i] == s1[j])
-			{
-				i++;
-				j++;
-			}
-			else
-				break;
-		}
-	}
-	cout << j+1 << endl;
-}
 
 signed main()
 {
-    int t;
-//    cin >> t;
-	t = 1;
-    while(t--)
-    {
-        solve();
-    }
+	int  i = 2;
+	vector<int> facs;
+	int fac = 1;
+	while(fac <= 1e12)
+	{
+		facs.push_back(fac);
+		fac *= i;
+		i++;
+	}
+	int z = 0;
+	for (int z:facs)
+		cout << z << " ";
+	cout << endl << facs.size();
 }

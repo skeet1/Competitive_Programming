@@ -23,33 +23,37 @@ typedef vector<int> vi;
 #define E end()
 #define RE rend()
 #define Z size()
-#define REP(i,a,b) for (int i = a; i < b; i++)
+#define rep(i,a,b) for (int i = a; i < b; i++)
 #define L length()
 
 void	solve()
 {
-	string s1, s2; cin >> s1 >> s2;
-	int j = 0;
-	for (int i = 0; i < s2.length(); i++)
+	int n, x;
+	cin >> n >> x;
+	vi t(n);
+	for (int i = 0; i < n; i++)
+		cin >> t[i];
+	sort(t.B, t.E);
+	int sum = 0;
+	int res = 0;
+	for (int i = 0; i < n - 1; i++)
 	{
-		for (; j < s1.length(); )
+		if (sum + t[i] <= x)
 		{
-			if (s2[i] == s1[j])
+			sum += t[i];
+			if (sum + t[i + 1] > x)
 			{
-				i++;
-				j++;
+				sum = 0;
+				res++;
 			}
-			else
-				break;
 		}
 	}
-	cout << j+1 << endl;
+	cout << res << nl;
 }
 
 signed main()
 {
     int t;
-//    cin >> t;
 	t = 1;
     while(t--)
     {
