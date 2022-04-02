@@ -7,6 +7,7 @@
 #include <string>
 #include <cstring>
 #include <iomanip>
+#include <set>
 #include <map>
 
 using namespace std;
@@ -28,6 +29,8 @@ typedef vector<int> vi;
 
 void	solve()
 {
+	/* Brute force method
+
 	int n; cin >> n;
 	vi t(n);
 	REP(i, 0, n)
@@ -38,6 +41,19 @@ void	solve()
 		if (t[i] != t[i - 1])
 			ans++;
 	cout << ans << nl;
+
+	*/
+	// try now to use set
+	int n; cin >> n;
+	set<int>s;
+	int a;
+	for (int i = 0; i < n; i++)
+	{
+		cin >> a;
+		s.insert(a);
+	}
+	cout << s.Z << nl;
+
 }
 
 signed main()
